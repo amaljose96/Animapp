@@ -11,17 +11,21 @@ $count_results=execute_MYSQL("SELECT * FROM DOCTORS;");
 $_SESSION['DOCTOR_ID']=$count_results->num_rows;
 $doctor_id=$count_results->num_rows;
 
-if($doctor_password!=$doctor_confpassword){
+if($doctor_password!=$doctor_confpassword){       //PASSWORDS MATCH
   echo "1";
   exit(0);
 }
 
+$search_results=execute_MYSQL("SELECT * FROM DOCTORS WHERE DOCTOR_EMAIL=$doctor_email");
+if($search_results->num_rows!=0){                 //DUPLICACY CHECK
+  echo "2";
+  exit(0);
+}
 
+//NO ISSUES. WRITE TO DB
 
-
-
-execute_MYSQL("INSERT INTO DOCTORS VALUES ($PET_ID,$PET_NAME,$PET_BREED,$doctorid);");
-
+execute_MYSQL("INSERT INTO DOCTORS VALUES ($DOCTOR_ID,$DOCTOR_NAME,$DOCTOR_EMAIL,$DOCTOR_PASSWORD,$DOCTOR_DESIGNATION);");
+echo "<script>window.location.href='view.html'</script>";
 function execute_MYSQL($sql){
   //DATABASE DETAILS
   $servername="mysql9.000webhost.com";

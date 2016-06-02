@@ -6,12 +6,10 @@ if($results->num_rows==1){
   $row = $result->fetch_assoc();
   $doctor_name=$row['DOCTOR_NAME'];
   $doctor_designation=$row['DOCTOR_DESIGNATION'];
-  echo"
-  <div id="doctor_name">Dr. $doctor_name</div>
-  <div id="doctor_desig">$doctor_designation</div>";
+  echo"<div id='doctor_name'>Dr. "+$doctor_name+"</div><div id='doctor_desig'>$doctor_designation</div>";
 }
 else{
-  echo "<script>window.location.href='index.html';";
+  echo "<script>window.location.href='index.html';</script>";
 }
 
 function execute_MYSQL($sql){
