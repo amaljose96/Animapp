@@ -1,0 +1,60 @@
+<html>
+  <head>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href='join.css'>
+      <script src="jquery.js"></script>
+  </head>
+  <body id="body">
+    <script>
+    function join_trigger(){
+      var name=$('#name').text();
+      var designation=$('#designation').text();
+      var email=$('#email').text();
+      var password=$('#password').text();
+      var conf_password=$('#conf_password').text();
+        $.ajax({
+            type: "POST",
+            url: "add_user.php",
+            data: "DOCTOR_NAME="+name+"&DOCTOR_DESIGNATION="+designation+"&DOCTOR_EMAIL="+email+"&DOCTOR_PASSWORD="+password+"&DOCTOR_CONFPASSWORD="+conf_password,
+            cache: false,
+            success: function(result){
+                  if(result=='1'){
+                    alert("PASSWORDS DONT MATCH");
+                  }
+                  else if(result=='2'){
+                    alert("DUPLICATE USER");
+                  }
+                  else{
+                    $("script").html(result);
+                  }
+              }
+          });
+      }
+      function warp_to_login(){
+        window.location.href='index.html';
+      }
+      $('div[contenteditable]').keydown(function(e) {
+            if (e.keyCode === 13) {
+                log_in_trigger();
+                return false;
+            }
+      });
+    </script>
+
+    <form>
+        <div id="Heading" style="font-weight:400">Join</div>
+        <div id='name_label' style="font-weight:100">Name:</div>
+        <div id='name' contenteditable='true' style="font-weight:100"></div>
+        <div id='email_label' style="font-weight:100">Email:</div>
+        <div id='email' contenteditable='true' style="font-weight:100"></div>
+        <div id='designation_label' style="font-weight:100"> Designation:</div>
+        <div id='designation' contenteditable='true' style="font-weight:100"></div>
+        <div id='password_label' style="font-weight:100">Password:</div>
+        <div id='password' style="font-weight:100"><div id='password_content' contenteditable='true'></div></div>
+        <div id='conf_password_label' style="font-weight:100">Confirm Password:</div>
+        <div id='conf_password' style="font-weight:100"><div id='conf_password_content' contenteditable='true'></div></div>
+        <div id='join_trigger' onclick='join_trigger()' style="font-weight:400">Sign Up</div>
+        <div id='log_in_link' onclick='warp_to_login()' style="font-weight:100">Already a user? Login Here</div>
+      </form>
+  </body>
+</html>

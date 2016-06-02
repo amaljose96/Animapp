@@ -60,10 +60,10 @@ else{
 
 function execute_MYSQL($sql){
   //DATABASE DETAILS
-  $servername="mysql9.000webhost.com";
-  $username = "a2122877_amal";
-  $password='Amaljose96';
-  $database= "a2122877_db";
+  $servername="localhost";
+  $username = "root";
+  $password='Amaljose@96';
+  $database= "Animapp";
   // Create connection
   $conn = new mysqli($servername, $username, $password, $database);
   // Check connection

@@ -1,31 +1,38 @@
 <html>
   <head>
-      <link type="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href='index.css'>
+    <script src="jquery.js"></script>
   </head>
   <body>
+    <script>
+    $("document").ready(function(){
+      $.ajax({
+          type: "POST",
+          url: "load_user.php",
+          cache: false,
+          success: function(result){
+              $("#doctor_pane").html(result);
+            }
+        });
+        $.ajax({
+            type: "POST",
+            url: "load_pets.php",
+            cache: false,
+            success: function(result){
+                $("#pets_content").html(result);
+              }
+          });
+    });
+    </script>
     <div id="hospital_heading">HOSPITAL</div>
     <div id="doctor_pane">
-      <div id="doctor_name">Dr. Bla bla bla</div>
-      <div id="doctor_desig">Nothing Much</div>
     </div>
     <div id="pets_pane">
       <div id="add_pet">Add pets</div>
       <div id="filter_pets">Your pets</div>
       <div id="pets_content">
-        <div class='pet_row' id='pet$id'>
-          <div class='pet_name' id='pet$id_name'></div>
-          <div class='pet_breed' id='pet$id_breed'></div>
-          <div class='pet_id' id='pet$id_id'></div>
-          <div class='pet_event_row'>
-            <div class='pet_event_date'>27th May 2015</div>
-            <div class='pet_event_medication'>Paracetamol</div>
-            <div class='pet_event_cost'>$20,000</div>
-            <div class='pet_event_description'>Just a lot of overdose</div>
-            <img src='http://image005.flaticon.com/1/svg/61/61456.svg' style="width:40px" onclick='activate_edit($id)'>
-            <img src='http://image005.flaticon.com/43/svg/54/54528.svg' style="width:40px" onclick='activate_delete($id)'>
-          </div>
-          <div class='pet_total_cost'></div>
-        </div>
+        
       </div>
     </div>
   </body>

@@ -1,6 +1,21 @@
-body{
-  font-family: sans-serif;
+@font-face {
+  font-family: 'General';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Comfortaa'), local('Comfortaa-Light'), url(lite.ttf);
 }
-#hospital_heading{
-
+@font-face {
+  font-family: 'General';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Comfortaa'), local('Comfortaa-Regular'), url(font.ttf);
+}
+@font-face {
+  font-family: 'General';
+  font-style: normal;;
+  font-weight: 700;
+  src: local('Comfortaa'), local('Comfortaa-Bold'), url(heading.ttf);
+}
+body{
+font-family: 'General', sans-serif;
 }

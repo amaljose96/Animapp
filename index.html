@@ -1,0 +1,55 @@
+<html>
+  <head>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href='index.css'>
+      <script src="jquery.js"></script>
+  </head>
+  <body id="body">
+    <script>
+      function log_in_trigger(){
+        var email=$('#email').text();
+        var password=$('#password').text();
+        $.ajax({
+            type: "POST",
+            url: "login.php",
+            data: "DOCTOR_EMAIL="+email+"&DOCTOR_PASSWORD="+password,
+            cache: false,
+            success: function(result){
+                  if(result=='1'){
+                    alert("INVALID USER");
+                  }
+                  else if(result=='2'){
+                    alert("INVALID PASSWORD");
+                  }
+                  else{
+                    $("script").html(result);
+                  }
+              }
+          });
+      }
+      function warp_to_join(){
+        window.location.href='join.html';
+      }
+      $(document).ready(function(){
+        $('div[contenteditable]').keydown(function(e) {
+              if (e.keyCode === 13) {
+                  log_in_trigger();
+                  e.preventDefault();
+
+              }
+        });
+      });
+
+    </script>
+
+      <form>
+          <div id="Heading" style="font-weight:400">Login</div><br>
+            <div id='email_label' style="font-weight:100">Email:</div>
+            <div id='email' style="font-weight:100" contenteditable='true'>E</div>
+          <div id='password_label' style="font-weight:100">Password:</div>
+          <div id='password' style="font-weight:100"><div id='password_content' contenteditable='true'></div></div>
+          <div id='log_in_trigger' style="font-weight:400" onclick='log_in_trigger()' action='submit'>Log In</div>
+          <div id='join_me_link' style="font-weight:100" onclick='warp_to_join()'>First time? Join here</div>
+        </form>
+  </body>
+</html>
