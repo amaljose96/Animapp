@@ -7,10 +7,17 @@ if($results->num_rows==1){
   $row = $results->fetch_assoc();
   $doctor_name=$row['DOCTOR_NAME'];
   $doctor_designation=$row['DOCTOR_DESIGNATION'];
+<<<<<<< HEAD
   echo "<div id='doctor_name'>Dr. ".$doctor_name."</div><div id='doctor_desig'>".$doctor_designation."</div>";
 }
 else{
   echo "<script>alert('There are $results->num_rows accounts');</script>";
+=======
+  echo"<div id='doctor_name'>Dr. "+$doctor_name+"</div><div id='doctor_desig'>$doctor_designation</div>";
+}
+else{
+  echo "<script>window.location.href='index.html';</script>";
+>>>>>>> origin/master
 }
 
 function execute_MYSQL($sql){
