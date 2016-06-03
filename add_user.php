@@ -24,18 +24,14 @@ if($search_results->num_rows!=0){                 //DUPLICACY CHECK
 }
 
 //NO ISSUES. WRITE TO DB
-<<<<<<< HEAD
+
 if($_SESSION['DOCTOR_ID']==1){
   $_SESSION['SUPERADMIN']=1;
 }
 echo "<script>alert('INSERT INTO DOCTORS VALUES ($doctor_id,\'$doctor_name\',\'$doctor_email\',\'$doctor_password\',\'$doctor_designation\');')</script>";
 $result=execute_MYSQL("INSERT INTO DOCTORS VALUES ($doctor_id,'$doctor_name','$doctor_email','$doctor_password','$doctor_designation');");
 echo "<script>alert('$result');window.location.href='view.html';</script>";
-=======
 
-execute_MYSQL("INSERT INTO DOCTORS VALUES ($DOCTOR_ID,$DOCTOR_NAME,$DOCTOR_EMAIL,$DOCTOR_PASSWORD,$DOCTOR_DESIGNATION);");
-echo "<script>window.location.href='view.html'</script>";
->>>>>>> origin/master
 function execute_MYSQL($sql){
   //DATABASE DETAILS
   $servername="localhost";

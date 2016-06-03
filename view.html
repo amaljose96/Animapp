@@ -1,44 +1,56 @@
 <html>
   <head>
-<<<<<<< HEAD
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href='index.css'>
+    <link rel="stylesheet" href='view.css'>
     <script src="jquery.js"></script>
-=======
-    <link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
-      <link type="stylesheet" href="style.css">
->>>>>>> origin/master
   </head>
   <body>
     <script>
     $("document").ready(function(){
+      $('div[contenteditable]').keydown(function(e){
+        e.preventDefault();
+      });
       $.ajax({
           type: "POST",
           url: "load_user.php",
           cache: false,
           success: function(result){
               $("#doctor_pane").html(result);
+              $.ajax({
+                  type: "POST",
+                  url: "load_pets.php",
+                  cache: false,
+                  success: function(result){
+                      $("#pets_content").html(result);
+                    }
+                });
             }
         });
-        $.ajax({
-            type: "POST",
-            url: "load_pets.php",
-            cache: false,
-            success: function(result){
-                $("#pets_content").html(result);
-              }
-          });
+
+
     });
+    function activate_logOut(){
+      $.ajax({
+          type: "POST",
+          url: "logout.php",
+          cache: false,
+          success:function(result){
+            $("script").html(result);
+          }
+        });
+    }
     </script>
     <div id="hospital_heading">HOSPITAL</div>
     <div id="doctor_pane">
+
     </div>
     <div id="pets_pane">
       <div id="add_pet">Add pets</div>
       <div id="filter_pets">Your pets</div>
       <div id="pets_content">
-        
       </div>
+    </div>
+    <div id='popup'>
     </div>
   </body>
 </html>

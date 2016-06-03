@@ -41,15 +41,18 @@
       });
 
     </script>
-
-      <form>
+      <div id='show_panel'>
+        <img id='logo' src="logo.png">
+        <div id='main_heading'>Animapp</div>
+      </div>
+      <div id='login_panel'>
           <div id="Heading" style="font-weight:400">Login</div><br>
             <div id='email_label' style="font-weight:100">Email:</div>
-            <div id='email' style="font-weight:100" contenteditable='true'>E</div>
+            <div id='email' style="font-weight:100" contenteditable='true'></div>
           <div id='password_label' style="font-weight:100">Password:</div>
           <div id='password' style="font-weight:100"><div id='password_content' contenteditable='true'></div></div>
           <div id='log_in_trigger' style="font-weight:400" onclick='log_in_trigger()' action='submit'>Log In</div>
           <div id='join_me_link' style="font-weight:100" onclick='warp_to_join()'>First time? Join here</div>
-        </form>
+        </div>
   </body>
 </html>
