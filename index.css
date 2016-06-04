@@ -52,7 +52,10 @@ margin-top: 5%;
   float: left;
   margin-left: 6%;
   width: 58%;
+<<<<<<< HEAD
   text-align: left;
+=======
+>>>>>>> origin/master
   border-bottom-style: groove;
   border-bottom-color: #2a286c;
   border-bottom-width: 1px;
@@ -69,6 +72,11 @@ margin-top: 5%;
   clear: left;
 }
 #password{
+<<<<<<< HEAD
+=======
+  font-size: 1.4em;
+  font-weight: 100;
+>>>>>>> origin/master
   margin-top: 5%;
   float: left;
   margin-left: 6%;
@@ -78,6 +86,7 @@ margin-top: 5%;
   border-bottom-width: 1px;
   outline-style: none;
 }
+<<<<<<< HEAD
 #password_content{
   font-size: 1.4em;
   font-weight: 100;
@@ -88,6 +97,12 @@ margin-top: 5%;
 #log_in_trigger{
   font-size: 1.2em;
   margin-top: 4%;
+=======
+#log_in_trigger{
+  font-size: 1.2em;
+  margin-top: 5%;
+  top:3%;
+>>>>>>> origin/master
   float: right;
   margin-right: 16%;
   width: 20%;

@@ -51,7 +51,11 @@ body{
 }
 #add_pet{
   border-style: solid;;
+<<<<<<< HEAD
   border-width: 2px;
+=======
+  border-width: 1px;
+>>>>>>> origin/master
   border-color: #2a286c;
   border-radius: 3px;
   background-color: #2a286c;
@@ -73,6 +77,7 @@ body{
   padding-right: 10px;
   display: inline;
 }
+<<<<<<< HEAD
 #all_pets{
   border-style: solid;
   border-width: 2px;
@@ -85,6 +90,8 @@ body{
   padding-right: 10px;
   display: inline;
 }
+=======
+>>>>>>> origin/master
 .pet_row{
   border-style: solid;
   border-width: 2px;

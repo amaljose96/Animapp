@@ -16,15 +16,24 @@ if ($results->num_rows !=0) {
     $pet_doctor=$row['PET_DOCTOR'];
     echo "  <div class='pet_row' id='pet$pet_id'>
     <img class='pet_image' id='pet$pet_id_image' src='/pet_images/$pet_id.jpeg'>
+<<<<<<< HEAD
       <div class='pet_name' id='pet$pet_id_name'>$pet_name</div>
       <div class='pet_breed' id='pet$pet_id_breed'>$pet_breed</div>
+=======
+      <div class='pet_name' id='pet$pet_id_name' contenteditable='true'>$pet_name</div>
+      <div class='pet_breed' id='pet$pet_id_breed' contenteditable='true'>$pet_breed</div>
+>>>>>>> origin/master
       <div class='pet_id' id='pet$pet_id_id'>$pet_id</div>";
       $event_results=execute_MYSQL("SELECT * FROM EVENTS WHERE PET_ID=$pet_id;");
       $authorisation =0;
       if($pet_doctor==$doctorid){
         $authorisation=1;
       }
+<<<<<<< HEAD
      //echo "authorisation=".$authorisation."superadmin=".$superadmin."current doctor=".$doctorid." pet's doctor=".$pet_doctor;
+=======
+    //  echo "authorisation=".$authorisation."superadmin=".$superadmin."current doctor=".$doctorid." pet's doctor=".$pet_doctor;
+>>>>>>> origin/master
       $totalcost=0;
       if($event_results->num_rows>0){
           while($event_row=$event_results->fetch_assoc()){
@@ -50,13 +59,21 @@ if ($results->num_rows !=0) {
         echo "No events";
       }
       echo "
+<<<<<<< HEAD
       <div class='add_pet_event_button' onclick='add_pet_event($pet_id)'><img class='add_pet_event' src='add.svg'>Add event</div>
+=======
+      <div class='add_pet_event_button' onclick='show_add_event_popup($pet_id)'><img class='add_pet_event' src='add.svg'>Add event</div>
+>>>>>>> origin/master
       <div class='pet_total_cost'>$totalcost</div>
     </div>";
   }
 }
 else{
+<<<<<<< HEAD
   echo "<br><br>No pets admitted here";
+=======
+  echo "No pets admitted here";
+>>>>>>> origin/master
 }
 
 

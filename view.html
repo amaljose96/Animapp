@@ -17,9 +17,24 @@
           success: function(result){
             view_all_pets();
               $("#doctor_pane").html(result);
+<<<<<<< HEAD
 
             }
         });
+=======
+              $.ajax({
+                  type: "POST",
+                  url: "load_pets.php",
+                  cache: false,
+                  success: function(result){
+                      $("#pets_content").html(result);
+                    }
+                });
+            }
+        });
+
+
+>>>>>>> origin/master
     });
     function activate_logOut(){
       $.ajax({
@@ -31,6 +46,7 @@
           }
         });
     }
+<<<<<<< HEAD
     function warp_to_addpet(){
       window.location.href='add_pet.html';
     }
@@ -74,6 +90,8 @@
             }
         });
     }
+=======
+>>>>>>> origin/master
     </script>
     <div id="hospital_heading">HOSPITAL</div>
     <div id="doctor_pane">
