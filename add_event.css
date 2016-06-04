@@ -1,0 +1,161 @@
+body{
+  vertical-align: middle;
+  text-align: center;
+  height: 100%;
+}
+
+#Heading{
+  font-size: 5em;
+  font-weight: 700;
+  margin-top: 5%;
+  margin-left: 3%;
+  color: #2a286c;
+  text-align: left;
+}
+#id_label{
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-top: 5%;
+  float: left;
+  margin-left: 6%;
+  width: 20%;
+  text-align: left;
+  clear: left;
+}
+#id{
+  font-size: 1.4em;
+  font-weight: 100;
+  margin-top: 5%;
+  float: left;
+  margin-left: 6%;
+  width: 58%;
+  border-bottom-style: solid;
+  border-bottom-color: #2a286c;
+  border-bottom-width: 1px;
+  outline-style: none;
+}
+#date_label{
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-top: 3%;
+  float: left;
+  margin-left: 6%;
+  width: 20%;
+  clear: left;
+  text-align: left;
+}
+#date{
+  font-size: 1.4em;
+  font-weight: 100;
+  margin-top: 3%;
+  float: left;
+  margin-left: 6%;
+  width: 58%;
+  border-bottom-style: groove;
+  border-bottom-color: #2a286c;
+  border-bottom-width: 1px;
+  outline-style: none;
+}
+#medicine_label{
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-top: 3%;
+  float: left;
+  margin-left: 6%;
+  width: 20%;
+  clear: left;
+  text-align: left;
+}
+#medicine{
+  font-size: 1.4em;
+  font-weight: 100;
+  margin-top: 3%;
+  float: left;
+  margin-left: 6%;
+  width: 58%;
+  border-bottom-style: groove;
+  border-bottom-color: #2a286c;
+  border-bottom-width: 1px;
+  outline-style: none;
+}
+#cost_label{
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-top: 3%;
+  float: left;
+  margin-left: 6%;
+  width: 20%;
+  clear: left;
+  text-align: left;
+}
+#cost{
+  font-size: 1.4em;
+  font-weight: 100;
+  margin-top: 3%;
+  float: left;
+  margin-left: 6%;
+  width: 58%;
+  border-bottom-style: groove;
+  border-bottom-color: #2a286c;
+  border-bottom-width: 1px;
+  outline-style: none;
+}
+#description_label{
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-top: 5%;
+  float: left;
+  margin-left: 6%;
+  width: 20%;
+  text-align: left;
+  clear: left;
+}
+#description{
+  font-size: 1.4em;
+  font-weight: 100;
+  margin-top: 5%;
+  float: left;
+  margin-left: 6%;
+  width: 58%;
+  border-bottom-style: solid;
+  border-bottom-color: #2a286c;
+  border-bottom-width: 1px;
+  outline-style: none;
+}
+#pet_id_label{
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-top: 3%;
+  float: left;
+  margin-left: 6%;
+  width: 20%;
+  clear: left;
+  text-align: left;
+}
+#pet_id{
+  font-size: 1.4em;
+  font-weight: 100;
+  margin-top: 3%;
+  float: left;
+  margin-left: 6%;
+  width: 58%;
+  border-bottom-style: groove;
+  border-bottom-color: #2a286c;
+  border-bottom-width: 1px;
+  outline-style: none;
+}
+#add_trigger{
+  font-size: 1.2em;
+  margin-top: 5%;
+  top:3%;
+  float: right;
+  margin-right: 16%;
+  width: 20%;
+  background-color: #fff;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #2a286c;
+  color:#2a286c;
+  padding: 10px;
+  clear: left;
+}

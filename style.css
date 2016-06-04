@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 @font-face {
   font-family: 'General';
   font-style: normal;
@@ -10,11 +10,6 @@
   font-style: normal;
   font-weight: 400;
   src: local('Comfortaa'), local('Comfortaa-Regular'), url(font.ttf);
-=======
-body{
-font-family: 'Fredoka One', cursive;
-font-size: 20px;
->>>>>>> origin/master
 }
 @font-face {
   font-family: 'General';

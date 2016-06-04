@@ -1,44 +1,92 @@
 <html>
   <head>
-<<<<<<< HEAD
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href='index.css'>
+    <link rel="stylesheet" href='view.css'>
     <script src="jquery.js"></script>
-=======
-    <link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
-      <link type="stylesheet" href="style.css">
->>>>>>> origin/master
   </head>
   <body>
     <script>
     $("document").ready(function(){
+      $('div[contenteditable]').keydown(function(e){
+        e.preventDefault();
+      });
       $.ajax({
           type: "POST",
           url: "load_user.php",
           cache: false,
           success: function(result){
+            view_all_pets();
               $("#doctor_pane").html(result);
+
             }
         });
-        $.ajax({
-            type: "POST",
-            url: "load_pets.php",
-            cache: false,
-            success: function(result){
-                $("#pets_content").html(result);
-              }
-          });
     });
+    function activate_logOut(){
+      $.ajax({
+          type: "POST",
+          url: "logout.php",
+          cache: false,
+          success:function(result){
+            $("script").html(result);
+          }
+        });
+    }
+    function warp_to_addpet(){
+      window.location.href='add_pet.html';
+    }
+    function view_all_pets(){
+      $.ajax({
+          type: "POST",
+          url: "load_pets.php",
+          cache: false,
+          success: function(result){
+              $("#pets_content").html(result);
+            }
+        });
+    }
+    function view_my_pets(){
+      $.ajax({
+          type: "POST",
+          url: "load_sp_pets.php",
+          cache: false,
+          success: function(result){
+              $("#pets_content").html(result);
+            }
+        });
+    }
+    function add_pet_event(id){
+      localStorage.setItem('dog_id',id);
+      window.location.href='add_event.html';
+    }
+    function activate_edit(id){
+      localStorage.setItem('event_id',id);
+      window.location.href='edit_event.html';
+    }
+    function activate_delete(id){
+      $.ajax({
+          type: "POST",
+          url: "delete_event.php",
+          cache: false,
+          data:"EVENT_ID="+id,
+          success: function(result){
+            alert("DELETED");
+              view_all_pets();
+            }
+        });
+    }
     </script>
     <div id="hospital_heading">HOSPITAL</div>
     <div id="doctor_pane">
+
     </div>
     <div id="pets_pane">
-      <div id="add_pet">Add pets</div>
-      <div id="filter_pets">Your pets</div>
+      <div id="add_pet" onclick='warp_to_addpet()'>Add pets</div>
+      <div id="filter_pets" onclick="view_my_pets()">Your pets</div>
+      <div id="all_pets" onclick="view_all_pets()">All pets</div>
       <div id="pets_content">
-        
       </div>
+    </div>
+    <div id='popup'>
     </div>
   </body>
 </html>

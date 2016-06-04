@@ -1,0 +1,51 @@
+<html>
+  <head>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href='add_event.css'>
+      <script src="jquery.js"></script>
+  </head>
+  <body id="body">
+    <script>
+    $("document").ready(function(){
+      var dogid=localStorage.getItem('dog_id');
+      localStorage.removeItem('dog_id');
+      if(dogid==null){
+        window.location.href='view.html';
+      }
+      $("#id").text(dogid);
+    });
+    function add_trigger(){
+      var id=$('#id').text();
+      var date=$('#date').text();
+      var medicine=$('#medicine').text();
+      var cost=$('#cost').text();
+      var description=$('#description').text();
+        $.ajax({
+            type: "POST",
+            url: "add_event.php",
+            data: "PET_ID="+id+"&EVENT_DATE="+date+"&EVENT_MEDICINE="+medicine+"&EVENT_COST="+cost+"&EVENT_DESCRIPTION="+description,
+            cache: false,
+            success: function(result){
+              $("script").html(result);
+                    window.location.href='view.html';
+              }
+          });
+      }
+    </script>
+
+    <form>
+        <div id="Heading" style="font-weight:400">Add event</div>
+        <div id='id_label' style="font-weight:100">Pet Id:</div>
+        <div id='id' contenteditable='false' style="font-weight:100"></div>
+        <div id='date_label' style="font-weight:100">Date:</div>
+        <div id='date' contenteditable='true' style="font-weight:100"></div>
+        <div id='medicine_label' style="font-weight:100">Medicine:</div>
+        <div id='medicine' contenteditable='true' style="font-weight:100"></div>
+        <div id='cost_label' style="font-weight:100">Cost:</div>
+        <div id='cost' contenteditable='true' style="font-weight:100"></div>
+        <div id='description_label' style="font-weight:100">Description:</div>
+        <div id='description' contenteditable='true' style="font-weight:100"></div>
+        <div id='add_trigger' onclick='add_trigger()' style="font-weight:400">Add event</div>
+      </form>
+  </body>
+</html>

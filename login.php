@@ -15,6 +15,7 @@ if($row['DOCTOR_PASSWORD']!=$doctor_password){
   echo "2";
   exit(0);
 }
+$_SESSION['SUPERADMIN']=0;
 $_SESSION['DOCTOR_ID']=$row['DOCTOR_ID'];
 if($_SESSION['DOCTOR_ID']==1){
   $_SESSION['SUPERADMIN']=1;

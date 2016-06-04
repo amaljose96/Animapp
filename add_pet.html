@@ -1,0 +1,40 @@
+<html>
+  <head>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href='add_pet.css'>
+      <script src="jquery.js"></script>
+  </head>
+  <body id="body">
+    <script>
+    function add_trigger(){
+      var name=$('#name').text();
+      var breed=$('#breed').text();
+        $.ajax({
+            type: "POST",
+            url: "add_pet.php",
+            data: "PET_NAME="+name+"&PET_BREED="+breed,
+            cache: false,
+            success: function(result){
+
+                    window.location.href='view.html';
+      
+          });
+      }
+      $('div[contenteditable]').keydown(function(e) {
+            if (e.keyCode === 13) {
+                add_trigger();
+                return false;
+            }
+      });
+    </script>
+
+    <form>
+        <div id="Heading" style="font-weight:400">Join</div>
+        <div id='name_label' style="font-weight:100">Name:</div>
+        <div id='name' contenteditable='true' style="font-weight:100"></div>
+        <div id='breed_label' style="font-weight:100">Breed:</div>
+        <div id='breed' contenteditable='true' style="font-weight:100"></div>
+        <div id='add_trigger' onclick='add_trigger()' style="font-weight:400">Add pet</div>
+      </form>
+  </body>
+</html>

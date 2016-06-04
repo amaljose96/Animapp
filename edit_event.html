@@ -1,0 +1,60 @@
+<html>
+  <head>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href='add_event.css'>
+      <script src="jquery.js"></script>
+  </head>
+  <body id="body">
+    <script>
+    $("document").ready(function(){
+      var id=localStorage.getItem('event_id');
+      localStorage.removeItem('event_id');
+      if(id==null){
+        window.location.href='view.html';
+      }
+      alert("got event id as "+id);
+      load_event_details(id);
+    });
+    function load_event_details(id){
+      $.ajax({
+          type: "POST",
+          url: "load_event_for_edit.php",
+          cache: false,
+          data:"EVENT_ID="+id,
+          success: function(result){
+              $("form").html(result);
+            }
+        });
+        $.ajax({
+            type: "POST",
+            url: "delete_event.php",
+            cache: false,
+            data:"EVENT_ID="+id,
+            success: function(result){
+              alert("DELETED");
+              }
+          });
+    }
+    function save_trigger(){
+      var id=$('#pet_id').text();
+      var date=$('#date').text();
+      var medicine=$('#medicine').text();
+      var cost=$('#cost').text();
+      var description=$('#description').text();
+        $.ajax({
+            type: "POST",
+            url: "add_event.php",
+            data: "PET_ID="+id+"&EVENT_DATE="+date+"&EVENT_MEDICINE="+medicine+"&EVENT_COST="+cost+"&EVENT_DESCRIPTION="+description,
+            cache: false,
+            success: function(result){
+              $("script").html(result);
+                    window.location.href='view.html';
+              }
+          });
+      }
+    </script>
+    <form>
+
+      </form>
+  </body>
+</html>
